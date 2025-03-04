@@ -1,26 +1,85 @@
-Laravel From Scratch Blog Demo Project
-http://laravelfromscratch.com
+# Project Title
 
-Installation
-First clone this repository, install the dependencies, and setup your .env file.
+A brief description of your project.
 
-git clone git@github.com:JeffreyWay/Laravel-From-Scratch-Blog-Project.git blog
-composer install
-cp .env.example .env
-Then create the necessary database.
+## Installation
 
-php artisan db
-create database blog
-And run the initial migrations and seeders.
+Instructions on how to install and set up the project.
 
-php artisan migrate --seed
-Further Ideas
-Of course we only had time in the Laravel From Scratch series to review the essentials of a blogging platform. You can certainly take this many steps further. Here are some quick ideas that you might play with.
+1. Clone the repository:
 
-Add a status column to the posts table to allow for posts that are still in a "draft" state. Only when this status is changed to "published" should they show up in the blog feed.
-Update the "Edit Post" page in the admin section to allow for changing the author of a post.
-Add an RSS feed that lists all posts in chronological order.
-Record/Track and display the "views_count" for each post.
-Allow registered users to "follow" certain authors. When they publish a new post, an email should be delivered to all followers.
-Allow registered users to "bookmark" certain posts that they enjoyed. Then display their bookmarks in a corresponding settings page.
-Add an account page to update your username and upload an avatar for your profile.
+    ```bash
+    git clone https://github.com/MahmoudSaberbrisha/conmpany.git
+    cd company
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    composer install
+    npm install
+    ```
+
+3. Set up your environment:
+
+    - Copy `.env.example` to `.env` and configure your database and other settings.
+
+4. Run migrations:
+
+    ```bash
+    php artisan migrate
+    ```
+
+5. Start the local development server:
+    ```bash
+    php artisan serve
+    ```
+
+## Usage
+
+Instructions on how to use the project.
+
+-   Access the application at `http://localhost:8000`.
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/MahmoudSaberbrisha/conmpany.git
+    cd company
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    composer install
+    npm install
+    ```
+
+3. Set up your environment:
+
+    - Copy `.env.example` to `.env` and configure your database and other settings.
+
+4. Run migrations:
+
+    ```bash
+    php artisan migrate
+    ```
+
+5. Start the local development server:
+    ```bash
+    php artisan serve
+    ```
+
+## Usage
+
+Instructions on how to use the project.
+
+-   Access the application at `http://localhost:8000`.
+
+## Contributing
+
+Guidelines for contributing to the project.
+
+## License
+
+Information about the project's license.
