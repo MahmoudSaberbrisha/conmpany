@@ -140,6 +140,15 @@
             <form class="form" style="width: 500px; height: 600px;" method="post"
                 action="{{ route('userregister') }}">
                 @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 @csrf
                 <p id="heading">Register</p>
@@ -182,7 +191,7 @@
                         placeholder="Confirm Password" />
                 </div>
                 <div class="btn">
-                    <button class="button1">
+                    <button type="submit" class="button1">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </button>
                     <button class="button2">Log In</button>

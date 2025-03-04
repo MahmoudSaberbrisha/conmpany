@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
-// use Illuminate\Support\Facades\Validator;
-// use Illuminate\Support\Facades\Log; // Import the Log facade
+use Illuminate\Support\Facades\Log; // Import the Log facade
 
 class RegisterController extends Controller
 {
@@ -31,7 +30,11 @@ class RegisterController extends Controller
         ]);
 
 
-        return to_route('home', $user)->with('success', 'Registration successful!');
+        // Log the registration attempt
+        Log::info('Admin registered: ' . $user->email);
+
+        // Redirect to the homepage with a success message
+        return redirect()->route('home')->with('success', 'Registration successful!');
     }
 
 
