@@ -24,7 +24,7 @@ Route::middleware(['admin'])->group(function () {
 
     Route::delete('admin/contact{id?}', [ContactUSController::class, 'destroycontact'])->name('contactdestroy');
 
-    Route::get('admin/product{id?}', [CatController::class, 'show'])->name('product');
+    Route::get('admin/product{id?}', [CatController::class, 'showproduct'])->name('product');
     Route::post('admin/product', [CatController::class, 'addProduct'])->name('addProduct');
     Route::put('admin/product{id?}', [CatController::class, 'update'])->name('product');
     Route::delete('admin/product{id?}', [CatController::class, 'destroy'])->name('product.destroy');
