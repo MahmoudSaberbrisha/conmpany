@@ -32,7 +32,7 @@ class RegisterController extends Controller
         ]);
 
 
-        return view('layouts.pages.homepage', $user)->with('success', 'Registration successful!');
+        return view('layouts.pages.homepage')->with('success', 'Registration successful!');
     }
 
 

@@ -42,7 +42,7 @@ class CatController extends Controller
             'image' => $imagePath,
             'name' => $request->name,
             'disc' => $request->disc,
-            'image' => $request->image,
+            // 'image' => $request->image,
         ]);
         // Assuming you have a Product model to handle product data
 
