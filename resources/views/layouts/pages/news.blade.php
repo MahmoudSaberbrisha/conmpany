@@ -22,24 +22,37 @@
     <!-- end breadcrumb section -->
     @if (Auth::check() && Admin::where('email', auth()->user()->email)->exists())
         <center>
-            <li>
-                <form action="{{ route('addnews') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="input__container">
-                        <label class="input__label">اخبار جديد</label>
-                        <input placeholder="الاسم" class="input" value="{{ auth()->user()->name }}" name="adminname"
-                            type="text">
-                        <input placeholder="الوصف" class="input" name="disc" type="text" required>
-                        <input placeholder="التاريخ" class="input" name="datatime" type="datetime" required>
-                        <input placeholder="مسار الصوره" class="input" name="image" type="file">
+            <button id="toggleFormButton" value="add" style="color: black">إضافة اخبار جديد</button>
+            <div id="categoryForm" style="display:none;">
+                <li>
+                    <form action="{{ route('addnews') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="input__container">
+                            <label class="input__label">اخبار جديد</label>
+                            <input placeholder="الاسم" class="input" value="{{ auth()->user()->name }}" name="adminname"
+                                type="text">
+                            <input placeholder="الوصف" class="input" name="disc" type="text" required>
+                            <input placeholder="التاريخ" class="input" name="datatime" type="datetime" required>
+                            <input placeholder="مسار الصوره" class="input" name="image" type="file">
 
-                        <button type="submit">add</button>
-                        <p class="input__description">اضف القسم الذي تريد</p>
-                    </div>
-                </form>
-            </li>
+                            <button type="submit">add</button>
+                            <p class="input__description">اضف القسم الذي تريد</p>
+                        </div>
+                    </form>
+                </li>
+            </div>
         </center>
     @endif
+    <script>
+        document.getElementById('toggleFormButton').addEventListener('click', function() {
+            var form = document.getElementById('categoryForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        });
+    </script>
     <!-- latest news -->
     <div class="row">
         @foreach ($admin_news as $item)

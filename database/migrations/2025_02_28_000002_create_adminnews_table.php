@@ -13,7 +13,7 @@ class CreateAdminnewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('adminnews', function (Blueprint $table) {
+        Schema::create('admin_news', function (Blueprint $table) {
             $table->id();
             $table->string('adminname');
             $table->text('disc');

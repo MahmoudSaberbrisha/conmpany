@@ -48,22 +48,35 @@
             </div>
             @if (Auth::check() && Admin::where('email', auth()->user()->email)->exists())
                 <center>
-                    <li style="background-color:transparent ">
-                        <form action="{{ route('categorystore') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="input__container">
-                                <label class="input__label">قسم جديد</label>
-                                <input placeholder="id" class="input" name="id" type="integer">
-                                <input placeholder="الاسم" class="input" name="name" type="text" required>
-                                <input placeholder="الوصف" class="input" name="disc" type="text">
-                                <input placeholder="مسار الصوره" class="input" name="image" type="file">
-                                <button type="submit">add</button>
-                                <p class="input__description">اضف المشروع الذي تريد</p>
-                            </div>
-                        </form>
-                    </li>
+                    <button id="toggleFormButton" value="add" style="color: black">إضافة قسم جديد</button>
+                    <div id="categoryForm" style="display:none;">
+                        <li style="background-color:transparent ">
+                            <form action="{{ route('categorystore') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="input__container">
+                                    <label class="input__label">قسم جديد</label>
+                                    <input placeholder="id" class="input" name="id" type="integer">
+                                    <input placeholder="الاسم" class="input" name="name" type="text" required>
+                                    <input placeholder="الوصف" class="input" name="disc" type="text">
+                                    <input placeholder="مسار الصوره" class="input" name="image" type="file">
+                                    <button type="submit">add</button>
+                                    <p class="input__description">اضف المشروع الذي تريد</p>
+                                </div>
+                            </form>
+                        </li>
+                    </div>
                 </center>
             @endif
+            <script>
+                document.getElementById('toggleFormButton').addEventListener('click', function() {
+                    var form = document.getElementById('categoryForm');
+                    if (form.style.display === 'none') {
+                        form.style.display = 'block';
+                    } else {
+                        form.style.display = 'none';
+                    }
+                });
+            </script>
 
             <div class="row">
                 @foreach ($categories as $item)

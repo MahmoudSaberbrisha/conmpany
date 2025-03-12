@@ -130,9 +130,9 @@
         text-transform: uppercase;
         font-weight: 600;
         border: none;
-        padding: 20px 30px;
+        padding: 5px 10px;
         cursor: pointer;
-        perspective: 30rem;
+        perspective: 3rem;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
     }
@@ -192,7 +192,7 @@
                             <a href="home">
                                 <img src={{ url('assets/img/mobile-app.png') }}
                                     style="min-height: 50px;min-width: 50px; max-width: 50;max-height: 50px"
-                                    alt="">
+                                    alt=""> MetaCodecx
                             </a>
 
                         </div>
@@ -231,24 +231,24 @@
                                 <li>
                                     <form method="post" action="{{ route('adminlogout') }}">
                                         @csrf
-                                        <button>Log out</button>
+                                        <button style="padding-bottom: 5px">Log out</button>
                                     </form>
                                 </li>
-                                <li><a href="shop">المتجر</a>
+                                {{-- <li><a href="shop">المتجر</a>
                                     <ul class="sub-menu">
                                         <li><a href="shop">المتجر</a></li>
                                         <li><a href="checkout">انهاء الدفع</a></li>
                                         <li><a href="single-product">مشاريع فرديه</a></li>
                                         <li><a href="cart">السله</a></li>
                                     </ul>
-                                </li>
-                                {{-- <li>
+                                </li> --}}
+                                <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
                                     </div>
-                                </li> --}}
+                                </li>
                             </ul>
                         </nav>
                         <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -338,6 +338,25 @@
                 </div>
             </div>
         </div>
+        <div class="single-homepage-slider homepage-bg-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 text-right">
+                        <div class="hero-text">
+                            <div class="hero-text-tablecell">
+                                <p class="subtitle">الكفاءه</p>
+                                <h1>خبره اعوام</h1>
+                                <div class="hero-btns">
+                                    <a href="shop" class="boxed-btn">مشاريعنا </a>
+                                    <a href="contact" class="bordered-btn"> تواصل معنا</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- end home page slider -->
     @yield('contant')

@@ -1504,10 +1504,13 @@ input[type="submit"] {
 }
 
 .homepage-bg-2 {
-    background-image: url(../img/site.jpg);
+    background-image: url(../img/site2.png);
+}
+.homepage-bg-3 {
+    background-image: url(../img/site4.jpg);
 }
 
-.homepage-bg-3 {
+.homepage-bg-4 {
     background-image: url(../img/electronic-site-design.png);
 }
 

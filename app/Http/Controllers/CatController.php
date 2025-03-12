@@ -20,7 +20,13 @@ class CatController extends Controller
         return view('layouts.pages.homepage', ['categories' => $categories, 'admin_news' => $admin_news]);
     }
 
+    public function catcard()
+    {
 
+        $products = Product::all();
+
+        return view('layouts.pages.cart', ['products' => $products]);
+    }
     // Method to store a new product
     public function categorystore(Request $request)
     {

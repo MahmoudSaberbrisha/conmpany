@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Register Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -93,39 +93,88 @@
 </head>
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
-
-    <div class="bg-gray-800 p-10 md:p-20 rounded-lg shadow-lg relative color-changing border-rotating">
-        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 via-transparent to-blue-500 rounded-lg opacity-50">
-        </div>
-        <div class="relative z-10">
-            <div class="text-center mb-10">
-                <i class="fas fa-user-plus text-pink-500 text-3xl"></i>
-                <span class="text-white text-3xl font-semibold mx-2">SIGN UP</span>
-                <i class="fas fa-heart text-pink-500 text-3xl"></i>
-            </div>
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" name="name" placeholder="Username"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" name="email" placeholder="Email"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <div class="flex justify-center items-center h-full w-full">
+        <div class="grid gap-8">
+            <section id="back-div" class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl">
+                <div class="border-8 border-transparent rounded-xl bg-gray-800 shadow-xl p-8 m-2">
+                    <h1 class="text-5xl font-bold text-center cursor-default text-gray-300">
+                        Register
+                    </h1>
+                    <form method="post" action="{{ route('adminregister') }}">
+                        @csrf
+                        <div>
+                            <label for="username" class="block mb-2 text-lg text-gray-300">Username</label>
+                            <input id="username"
+                                class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                type="text" placeholder="Username" required="name" name="name" />
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-lg text-gray-300">Email</label>
+                            <input id="email"
+                                class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                type="email" placeholder="Email" required="email" name="email" />
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-lg text-gray-300">Password</label>
+                            <input id="password"
+                                class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                type="password" placeholder="Password" required="password" name="password" />
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="block mb-2 text-lg text-gray-300">Confirm
+                                Password</label>
+                            <input id="confirm-password" name="password_confirmation"
+                                class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                type="password" placeholder="Confirm Password" required="confirm-password" />
+                        </div>
+                        <button
+                            class="w-full p-3 mt-4 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            type="submit">
+                            REGISTER
+                        </button>
+                    </form>
+                    <div class="flex flex-col mt-4 text-sm text-center text-gray-300">
+                        <p>
+                            Already have an account?
+                            <a href="#" class="text-blue-400 transition hover:underline">Log In</a>
+                        </p>
+                    </div>
+                    <div id="third-party-auth" class="flex justify-center gap-4 mt-5">
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6" loading="lazy"
+                                src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/" alt="Google logo" />
+                        </button>
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6" loading="lazy"
+                                src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/" alt="LinkedIn logo" />
+                        </button>
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6 dark:invert" loading="lazy"
+                                src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/" alt="GitHub logo" />
+                        </button>
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6" loading="lazy"
+                                src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/" alt="Facebook logo" />
+                        </button>
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6" loading="lazy"
+                                src="https://ucarecdn.com/82d7ca0a-c380-44c4-ba24-658723e2ab07/" alt="Twitter logo" />
+                        </button>
+                        <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                            <img class="w-6 h-6" loading="lazy"
+                                src="https://ucarecdn.com/3277d952-8e21-4aad-a2b7-d484dad531fb/" alt="Apple logo" />
+                        </button>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-gray-500">
+                        <p>
+                            By signing up, you agree to our
+                            <a href="#" class="text-blue-400 transition hover:underline">Terms</a>
+                            and
+                            <a href="#" class="text-blue-400 transition hover:underline">Privacy Policy</a>.
+                        </p>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="password" name="password" placeholder="Password"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" name="password_confirmation" placeholder="Confirm Password"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <div class="mb-6">
-                    <button type="submit"
-                        class="w-full py-3 md:py-4 rounded-full bg-teal-400 text-gray-900 text-lg md:text-xl font-semibold hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 btn-animated">Sign
-                        up</button>
-                </div>
-                <div class="flex justify-between text-sm md:text-lg text-gray-400">
-                    <a href="#" class="hover:underline">Already have an account? Sign in</a>
-                </div>
-            </form>
+            </section>
         </div>
     </div>
 </body>

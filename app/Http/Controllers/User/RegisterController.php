@@ -32,12 +32,12 @@ class RegisterController extends Controller
         ]);
 
 
-        return to_route('home', $user)->with('success', 'Registration successful!');
+        return view('layouts.pages.homepage', $user)->with('success', 'Registration successful!');
     }
 
 
     public function show(User $user)
     {
-        return view('home', ["user" => $user]);
+        return view('layouts.pages.homepage', ["user" => $user]);
     }
 }

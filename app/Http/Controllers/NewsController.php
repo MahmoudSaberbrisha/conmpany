@@ -4,17 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\AdminNews;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log; // Import Log class for logging
 
 class NewsController extends Controller
 {
     // Method to get all products
-    public function adminnews()
-    {
 
-        $admin_news = AdminNews::all();
-
-        return view('layouts.pages.homepage', ['admin_news' => $admin_news]);
-    }
     public function news()
     {
         $admin_news = AdminNews::all();
@@ -34,8 +29,12 @@ class NewsController extends Controller
 
         // Handle the image upload if present
         $imagePath = $request->hasFile('image') ? $request->file('image')->store('images', 'public') : null;
+        if (!$imagePath) {
+            Log::error('Image upload failed');
+            return response()->json(['message' => 'Image upload failed'], 422);
+        }
 
-        // Create a new news entry in the admin_news table
+
         AdminNews::create([
             'adminname' => $request->adminname,
             'disc' => $request->disc,

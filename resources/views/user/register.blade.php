@@ -3,131 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Register Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        @keyframes colorChange {
-            0% {
-                background-color: #1f2937;
-            }
-
-            25% {
-                background-color: #3b3f5c;
-            }
-
-            50% {
-                background-color: #1f2937;
-            }
-
-            75% {
-                background-color: #3b3f5c;
-            }
-
-            100% {
-                background-color: #1f2937;
-            }
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-bottom: 0.4em;
+            background-color: #171717;
+            border-radius: 25px;
+            transition: 0.4s ease-in-out;
         }
 
-        .color-changing {
-            animation: colorChange 5s infinite;
+        .card {
+            background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+            border-radius: 22px;
+            transition: all 0.3s;
         }
 
-        @keyframes borderRotate {
-            0% {
-                border-color: #ff0000;
-            }
-
-            25% {
-                border-color: #00ff00;
-            }
-
-            50% {
-                border-color: #0000ff;
-            }
-
-            75% {
-                border-color: #ffff00;
-            }
-
-            100% {
-                border-color: #ff0000;
-            }
+        .card2 {
+            border-radius: 0;
+            transition: all 0.2s;
         }
 
-        .border-rotating {
-            border-width: 4px;
-            border-style: solid;
-            animation: borderRotate 5s infinite;
+        .card2:hover {
+            transform: scale(0.98);
+            border-radius: 20px;
         }
 
-        .btn-animated {
-            position: relative;
-            overflow: hidden;
-            transition: background-color 0.3s ease;
+        .card:hover {
+            box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
         }
 
-        .btn-animated::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: rgba(255, 255, 255, 0.15);
-            transition: all 0.3s ease;
-            transform: translate(-50%, -50%) rotate(45deg);
-            opacity: 0;
+        #heading {
+            text-align: center;
+            margin: 2em;
+            color: rgb(255, 255, 255);
+            font-size: 1.2em;
         }
 
-        .btn-animated:hover::before {
-            width: 0;
-            height: 0;
-            opacity: 1;
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5em;
+            border-radius: 25px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #171717;
+            box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
         }
 
-        .btn-animated:hover {
-            background-color: #38b2ac;
+        .input-icon {
+            height: 1.8em;
+            width: 1.3em;
+            fill: white;
+        }
+
+        .input-field {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #d3d3d3;
+        }
+
+        .form .btn {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 2.5em;
+        }
+
+        .button1 {
+            padding: 0.5em;
+            padding-left: 1.1em;
+            padding-right: 1.1em;
+            border-radius: 5px;
+            margin-right: 0.5em;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #252525;
+            color: white;
+        }
+
+        .button1:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button2 {
+            padding: 0.5em;
+            padding-left: 2.3em;
+            padding-right: 2.3em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #252525;
+            color: white;
+        }
+
+        .button2:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button3 {
+            margin-bottom: 3em;
+            padding: 0.5em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #252525;
+            color: white;
+        }
+
+        .button3:hover {
+            background-color: red;
+            color: white;
         }
     </style>
 </head>
 
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
-
-    <div class="bg-gray-800 p-10 md:p-20 rounded-lg shadow-lg relative color-changing border-rotating">
-        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 via-transparent to-blue-500 rounded-lg opacity-50">
-        </div>
-        <div class="relative z-10">
-            <div class="text-center mb-10">
-                <i class="fas fa-user-plus text-pink-500 text-3xl"></i>
-                <span class="text-white text-3xl font-semibold mx-2">SIGN UP</span>
-                <i class="fas fa-heart text-pink-500 text-3xl"></i>
-            </div>
-            <form method="POST" action="{{ route('userregister') }}">
+    <div class="card" style="width: 500px; height: 600px;">
+        <div class="card2" style="width: 500px; height: 600px;">
+            <form class="form" style="width: 500px; height: 600px;" method="post"
+                action="{{ route('userregister') }}">
                 @csrf
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" name="name" placeholder="Username"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" name="email" placeholder="Email"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                @csrf
+                <p id="heading">Register</p>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path
+                            d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z">
+                        </path>
+                    </svg>
+                    <input type="text" name="name" class="input-field" placeholder="Username"
+                        autocomplete="off" />
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="password" name="password" placeholder="Password"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="password" name="password_confirmation" placeholder="Confirm Password"
-                        class="w-full px-6 py-3 md:px-8 md:py-4 rounded-full bg-gray-700 text-white text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path
+                            d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z">
+                        </path>
+                    </svg>
+                    <input type="email" name="email" class="input-field" placeholder="Email" autocomplete="off" />
                 </div>
-                <div class="mb-6">
-                    <button type="submit"
-                        class="w-full py-3 md:py-4 rounded-full bg-teal-400 text-gray-900 text-lg md:text-xl font-semibold hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500 btn-animated">Sign
-                        up</button>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z">
+                        </path>
+                    </svg>
+                    <input type="password" name="password" class="input-field" placeholder="Password" />
                 </div>
-                <div class="flex justify-between text-sm md:text-lg text-gray-400">
-                    <a href="#" class="hover:underline">Already have an account? Sign in</a>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path
+                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z">
+                        </path>
+                    </svg>
+                    <input type="password" name="password_confirmation" class="input-field"
+                        placeholder="Confirm Password" />
                 </div>
+                <div class="btn">
+                    <button class="button1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </button>
+                    <button class="button2">Log In</button>
+                </div>
+                <button class="button3">Forgot Password</button>
             </form>
         </div>
     </div>
+
 </body>
 
 </html>
