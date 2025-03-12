@@ -102,30 +102,58 @@
                     </h1>
                     <form method="post" action="{{ route('adminregister') }}">
                         @csrf
+<<<<<<< HEAD
+=======
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         <div>
                             <label for="username" class="block mb-2 text-lg text-gray-300">Username</label>
                             <input id="username"
                                 class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+<<<<<<< HEAD
                                 type="text" placeholder="Username" required="name" name="name" />
+=======
+                                type="text" placeholder="Username" required name="name" />
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         </div>
                         <div>
                             <label for="email" class="block mb-2 text-lg text-gray-300">Email</label>
                             <input id="email"
                                 class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+<<<<<<< HEAD
                                 type="email" placeholder="Email" required="email" name="email" />
+=======
+                                type="email" placeholder="Email" required name="email" />
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-lg text-gray-300">Password</label>
                             <input id="password"
                                 class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+<<<<<<< HEAD
                                 type="password" placeholder="Password" required="password" name="password" />
+=======
+                                type="password" placeholder="Password" required name="password" />
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         </div>
                         <div>
                             <label for="confirm-password" class="block mb-2 text-lg text-gray-300">Confirm
                                 Password</label>
                             <input id="confirm-password" name="password_confirmation"
                                 class="border p-3 shadow-md bg-gray-700 text-gray-300 border-gray-700 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+<<<<<<< HEAD
                                 type="password" placeholder="Confirm Password" required="confirm-password" />
+=======
+                                type="password" placeholder="Confirm Password" required />
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         </div>
                         <button
                             class="w-full p-3 mt-4 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

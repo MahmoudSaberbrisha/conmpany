@@ -18,6 +18,7 @@ return [
         'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
     ],
 
+<<<<<<< HEAD
 'guards' => [
     'web' => [
         'driver' => 'session',
@@ -41,12 +42,46 @@ return [
         'model' => App\Models\Admin::class,
     ],
 ],
+=======
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
+    ],
+
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
+        ],
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+<<<<<<< HEAD
 
+=======
+    ],
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
 
     /*
     |--------------------------------------------------------------------------
@@ -89,4 +124,8 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
