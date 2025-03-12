@@ -13,11 +13,7 @@ class CreateAdminnewsTable extends Migration
      */
     public function up()
     {
-<<<<<<< HEAD
         Schema::create('admin_news', function (Blueprint $table) {
-=======
-        Schema::create('adminnews', function (Blueprint $table) {
->>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
             $table->id();
             $table->string('adminname');
             $table->text('disc');
@@ -36,8 +32,4 @@ class CreateAdminnewsTable extends Migration
     {
         Schema::dropIfExists('adminnews');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6

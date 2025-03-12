@@ -22,11 +22,7 @@ class DatabaseSeeder extends Seeder
         // Admin::factory(10)->create();
         // Customer::factory(10)->create();
         // Category::factory(10)->create();
-<<<<<<< HEAD
         // Product::factory(50)->create();
-=======
-        Product::factory(50)->create();
->>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
         // Contact::factory(count: 10)->create();
 
 

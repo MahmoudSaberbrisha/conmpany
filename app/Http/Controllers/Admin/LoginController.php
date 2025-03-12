@@ -1,29 +1,23 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    // Show the login form
     public function showLoginForm()
     {
         return view('admin.login');
     }
 
-    // Handle the login logic
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed
+        if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->intended('admin/home');
         }
 
@@ -32,10 +26,9 @@ class LoginController extends Controller
         ]);
     }
 
-    // Handle user logout
     public function logout()
     {
-        Auth::logout();
-        return redirect('admin/login');
+        Auth::guard('admin')->logout();
+        return redirect('login');
     }
 }
