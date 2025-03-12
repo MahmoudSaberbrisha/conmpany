@@ -35,10 +35,10 @@ Route::get('admin/contact', [ContactUSController::class, 'contactget']);
 
 Route::delete('admin/contact{id?}', [ContactUSController::class, 'destroycontact'])->name('contactdestroy');
 
-Route::get('admin/product{id?}', [CatController::class, 'show'])->name('product');
+Route::get('admin/product{id?}', [CatController::class, 'showproduct'])->name('product');
 Route::post('admin/product', [CatController::class, 'addProduct'])->name('addProduct');
-Route::put('admin/product{id?}', [CatController::class, 'update'])->name('product');
-Route::delete('admin/product{id?}', [CatController::class, 'destroy'])->name('product.destroy');
+Route::put('admin/product{id?}', [CatController::class, 'updateproduct'])->name('product');
+Route::delete('admin/product{id?}', [CatController::class, 'destroyproduct'])->name('product.destroy');
 
 Route::post('admin/home', [CatController::class, 'categorystore'])->name('categorystore');
 Route::delete('admin/home{id?}', [CatController::class, 'destroycat'])->name('categorydestroy');

@@ -22,7 +22,9 @@
     <!-- end breadcrumb section -->
     @if (Auth::check() && Admin::where('email', auth()->user()->email)->exists())
         <center>
-            <button id="toggleFormButton" value="add" style="color: black">إضافة اخبار جديد</button>
+            <button id="toggleFormButton" value="add"
+                style="color: black ;width: 150px;height: 100px; border-radius: 200px; margin: 20px;">إضافة اخبار
+                جديد</button>
             <div id="categoryForm" style="display:none;">
                 <li>
                     <form action="{{ route('addnews') }}" method="POST" enctype="multipart/form-data">
@@ -56,11 +58,12 @@
     <!-- latest news -->
     <div class="row">
         @foreach ($admin_news as $item)
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-latest-news">
                     <a href="single-news">
                         <div><img src={{ url("$item->image") }}
-                                style="min-height: 350px; max-height: 250px; border-radius: 10px"></div>
+                                style="min-height: 350px; max-height: 350px; border-radius: 10px">
+                        </div>
                     </a>
                     <div class="news-text-box">
                         <h3><a href="single-news">انتقل الي باقي الاخبار</a></h3>

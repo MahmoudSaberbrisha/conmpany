@@ -18,12 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::factory(10)->create();
-        Admin::factory(10)->create();
+        // User::factory(10)->create();
+        // Admin::factory(10)->create();
         // Customer::factory(10)->create();
-        Category::factory(10)->create();
+        // Category::factory(10)->create();
         Product::factory(50)->create();
-        Contact::factory(count: 10)->create();
+        // Contact::factory(count: 10)->create();
 
 
         // Call the AdminNewsSeeder

@@ -42,7 +42,7 @@ class CatController extends Controller
             'image' => $imagePath,
             'name' => $request->name,
             'disc' => $request->disc,
-            // 'image' => $request->image,
+            'image' => $imagePath,
         ]);
         // Assuming you have a Product model to handle product data
 
@@ -75,10 +75,10 @@ class CatController extends Controller
         $imagePath = $request->file('image')->store('images', 'public');
         $product = Product::create([
             'image' => $imagePath,
-            'image' => $imagePath,
             'name' => $request->name,
             'disc' => $request->disc,
             'price' => $request->price,
+
             'category_id' => $request->category_id,
         ]);
         // Assuming you have a Product model to handle product data
@@ -133,6 +133,6 @@ class CatController extends Controller
         $product->delete();
         // Logic to delete a specific product
 
-        return view('layouts.pages.homepage');
+        return to_route('product', Product::get('category_id'));
     }
 }

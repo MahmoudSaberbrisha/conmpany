@@ -82,7 +82,7 @@
                                             <button>
                                                 <a style="color: black">اضافه </a>
                                             </button>
-                                            <form action="{{ route('product.destroy', $item) }}" method="post">
+                                            <form action={{ route('product.destroy', $item) }} method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">

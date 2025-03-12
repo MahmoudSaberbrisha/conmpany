@@ -43,6 +43,6 @@ class NewsController extends Controller
         ]);
 
         // Return a response indicating success
-        return response()->json(['message' => 'News added successfully']);
+        return to_route('news')->with(['message' => 'News added successfully']);
     }
 }
