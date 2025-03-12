@@ -22,6 +22,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('admin/login')->with('error', 'You do not have admin access.');
+        return redirect('adminlogin')->with('error', 'You do not have admin access.');
     }
 }

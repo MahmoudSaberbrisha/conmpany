@@ -7,13 +7,13 @@ use App\Http\Controllers\User\RegisterController;
 use Illuminate\Support\Facades\Route;
 // Registration Routes
 Route::prefix('user')->group(function () {
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('userlogin');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('userlogout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('userlogin');
+Route::post('/login', [LoginController::class, 'login'])->name('userlogin');
+Route::post('/logout', [LoginController::class, 'logout'])->name('userlogout');
 
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('userregister');
-Route::post('register', [RegisterController::class, 'register'])->name('userregister');
-Route::post('home/{user?}', [RegisterController::class, 'show']);
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('userregister');
+Route::post('/register', [RegisterController::class, 'register'])->name('userregister');
+Route::post('/home/{user?}', [RegisterController::class, 'show']);
 });
 
 Route::middleware(['auth:web'])->group(function () {
@@ -24,6 +24,10 @@ Route::get('user/product{id?}', [CatController::class, 'showproduct'])->name('pr
 
 
 Route::post('user/contact', [ContactUSController::class, 'contactstore'])->name('addcontact');
+
+
+Route::post('admin/home', [CatController::class, 'categorystore'])->name('categorystore');
+Route::delete('admin/home{id?}', [CatController::class, 'destroycat'])->name('categorydestroy');
 
 Route::get('user/about', function () {
 return view('layouts.pages.about');

@@ -22,6 +22,6 @@ class Authenticate
             return $next($request);
         }
 
-        return redirect('user/login')->with('error', 'You do not have admin access.');
+        return to_route('userlogin')->with('error', 'You do not have admin access.');
     }
 }

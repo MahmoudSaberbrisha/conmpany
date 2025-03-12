@@ -140,8 +140,6 @@
             <form class="form" style="width: 500px; height: 600px;" method="post"
                 action="{{ route('userregister') }}">
                 @csrf
-<<<<<<< HEAD
-=======
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -151,9 +149,7 @@
                         </ul>
                     </div>
                 @endif
->>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
 
-                @csrf
                 <p id="heading">Register</p>
                 <div class="field">
                     <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"
@@ -194,11 +190,9 @@
                         placeholder="Confirm Password" />
                 </div>
                 <div class="btn">
-<<<<<<< HEAD
-                    <button class="button1">
-=======
+
+
                     <button type="submit" class="button1">
->>>>>>> 09cb4c8f13bbc80c3e3a01297cc00c9f4f3888e6
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </button>
                     <button class="button2">Log In</button>

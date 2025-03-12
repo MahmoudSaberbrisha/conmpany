@@ -14,7 +14,7 @@ class AdminNewsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('adminnews')->insert([
+        DB::table('admin_news')->insert([
             [
                 'adminname' => 'Admin 1',
                 'disc' => 'This is a sample announcement from Admin 1.',

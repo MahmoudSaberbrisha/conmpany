@@ -168,7 +168,7 @@
     </div> --}}
     <div class="card" style="width: 500px; height: 500px;">
         <div class="card2" style="width: 500px; height: 500px;">
-            <form class="form" style="width: 500px; height: 500px;" method="post" action="{{ route('userlogin') }}">
+            <form class="form" style="width: 500px; height: 500px;" method="post" action={{ route('userlogin') }}>
                 @csrf
                 <p id="heading">Login</p>
                 <div class="field">

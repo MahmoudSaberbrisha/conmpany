@@ -100,7 +100,7 @@
                     <h1 class="text-5xl font-bold text-center cursor-default dark:text-gray-300 text-gray-900">
                         Log in
                     </h1>
-                    <form method="post" action="{{ route('adminlogin') }}" class="space-y-6">
+                    <form method="post" action={{ route('adminlogin') }} class="space-y-6">
                         @csrf
                         <div>
                             <label for="email" class="block mb-2 text-lg dark:text-gray-300">Email</label>

@@ -1,24 +1,30 @@
 <?php
 
+
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    // Show the login form
     public function showLoginForm()
     {
         return view('user.login');
     }
 
+    // Handle the login logic
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        if (Auth::guard('user')->attempt($credentials)) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication passed
             return redirect()->intended('user/home');
         }
 
@@ -27,9 +33,10 @@ class LoginController extends Controller
         ]);
     }
 
+    // Handle user logout
     public function logout()
     {
-        Auth::guard('user')->logout();
-        return redirect('/user/login');
+        Auth::logout();
+        return redirect()->route('userlogin');
     }
 }
